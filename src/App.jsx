@@ -1,37 +1,16 @@
-import { useQuery, gql } from "@apollo/client";
+import { AddTodos } from './AddTodos';
+import { DisplayTodos } from './DisplayTodos';
 
-const getTodos = gql`
-  query getTodos {
-    todos {
-      id
-      text
-      done
-    }
-  }
-`;
 
-function DisplayLocations() {
-  const { loading, error, data } = useQuery(getTodos);
-
-  console.log({ loading, error, data });
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
-
-  return data.todos.map(({ id, text, done }) => (
-    <div key={id}>
-      <h3>{text}</h3>
-      <p>{done?'yes':'no'}</p>
-    </div>
-  ));
-}
 
 function App() {
   return (
-    <div>
-      <h2>My first Apollo app 🚀</h2>
+    <div className="vh-100 code flex flex-column items-center bg-purple white pa4">
+      <h1 className="f2">GrapgQL Checklist 🚀</h1>
       <br />
-      <DisplayLocations />
+      <AddTodos />
+      <br />
+      <DisplayTodos />
     </div>
   );
 }
