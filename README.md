@@ -9,3 +9,8 @@ A To-Do List/CRUD app where you can Add, remove todos & toggle todos state by cl
 - cd React-Graphql-Checklist
 - `npm i`
 - `npm start`
+
+## 🧰 Tools I've used
+
+- apollo/client
+- tachyons (UI Library)
